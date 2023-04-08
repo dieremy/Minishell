@@ -6,7 +6,7 @@
 #    By: robegarc <robegarc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/06 15:22:58 by robegarc          #+#    #+#              #
-#    Updated: 2023/04/06 15:23:05 by robegarc         ###   ########.fr        #
+#    Updated: 2023/04/08 12:18:30 by robegarc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,11 +30,11 @@ LIBS = -L$(LIBFT) -L/Users/robegarc/.brew/opt/readline/lib -lft -lreadline
 NAME = minishell
 
 %.o : %.c
-	@${CC} ${FLAG} -c $< -o $@
+	@${CC} ${FLAG} -c $< -o $@ -g
 
 ${NAME} : ${OBJ}
 	@make -C ${LIBFT}
-	@${CC} ${FLAG} ${OBJ} ${LIBRARY} ${INCLUDE} ${LIBS} -lreadline -o ${NAME}
+	@${CC} ${FLAG} ${OBJ} ${LIBRARY} ${INCLUDE} ${LIBS} -lreadline -o ${NAME} -g
 	@echo "${COLOR_GREEN}COMPILATION${COLOR_DEFAULT}"
 
 all : ${NAME}

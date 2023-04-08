@@ -6,7 +6,7 @@
 /*   By: robegarc <robegarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 14:59:46 by robegarc          #+#    #+#             */
-/*   Updated: 2023/04/06 17:41:41 by robegarc         ###   ########.fr       */
+/*   Updated: 2023/04/08 16:53:39 by robegarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,11 @@
 
 # define MINISHELL "\033[0;35mMinishell\033[0m >>> "
 
+# define PIP "|"
+
 enum e_flags
 {
+	param = 0,
 	pipe_line = 1,
 	double_and = 2,
 	or = 3,
@@ -47,6 +50,7 @@ typedef struct s_args
 typedef struct s_cmd
 {
 	char			**mat;
+	char			*cmd_line;
 	char			*line;
 	char			*param;
 	int				i;
